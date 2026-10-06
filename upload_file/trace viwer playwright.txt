@@ -1,0 +1,27 @@
+trace viwer playwright 
+1.create the trace viwer class and run 
+2 trace zip file is ceeate local project 
+3.open the cmd run the command 
+
+open the project terminal 
+run the command 
+npx playwright show-trace trace.zip
+npm install -D @playwright/test
+npx playwright codegen https://www.flipkart.com/ 
+
+this is record the javascript code if you want to java code 
+
+run Eclipse terminal 
+
+npx playwright codegen https://www.nuego.in/ --target java
+
+If you want to the navigate the steps debug the code steps 
+go to eclipse click run as 
+set environment PWDEBUG Variable and value set 1
+or use the method in script page.pause                  
+                   Update location
+                
+run the java application 
+
+
+

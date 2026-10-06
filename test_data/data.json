@@ -1,0 +1,29 @@
+[
+  {
+    "email": "sumedhsonawane19@gmail.com",
+    "password": "Sumedh@123#",
+    "validity": "valid"
+  },
+  {
+    "email": "sumedhsonawane19@gmail.com",
+    "password": "Sumedh@12#",
+    "validity": "invalid"
+
+  },
+  {
+    "email": "sumedhsonawane19@gmail.com",
+    "password": "Sumedh@#",
+    "validity": "invalid"
+  },
+  {
+    "email": "",
+    "password": "",
+    "validity": "invalid"
+
+  }
+
+
+
+
+
+]

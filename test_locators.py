@@ -1,0 +1,55 @@
+import time
+import re
+from playwright.sync_api import Page,expect
+
+#1.page.get_by_alt_text
+#2.page.get_by_text
+#3.page.get_by_role
+#4.page.get_by_label()
+#5.page.get_by_placeholder()
+#6.page.get_by_title()
+#7.page.get_by_test_id()
+
+
+# 1.page.get_by_alt_text()
+def test_verify(page:Page):
+    page.goto("https://demo.nopcommerce.com/")
+    time.sleep(5)
+    page.wait_for_timeout(5000)  #5000ms = 5s
+    logo= page.get_by_alt_text("nopCommerce demo store")
+    expect(logo).to_be_visible()
+#******************************************************************************
+# 2.page.get_by_text()
+    expect(page.get_by_text("Welcome to our store")).to_be_visible() # full text
+    expect(page.get_by_text("Welcome to")).to_be_visiable()    #partial text
+    expect(page.get_by_text(re.compile(".*Welcome.*"))).to_be_visiable() # reg expression
+
+# 3.page.get_by_role()
+    page.goto("https://demo.nopcommerce.com/register?returnUrl=%2F")
+    expect(page.get_by_role(role="heading",name="Register")).to_be_visible()
+
+#4.page.get_by_label()
+    page.get_by_label("First name:").fill("sumeet")
+    page.get_by_label("Last name:").fill("sonawane")
+
+#5.page.get_by_placeholder
+    page.get_by_placeholder("Search store").fill("apple laptop")
+    page.wait_for_timeout(5000)
+
+#6.page.get_by_title()
+    page.goto("https://testautomationpractice.blogspot.com/p/playwrightpractice.html")
+    expect(page.get_by_title("Home page link")).to_have_text("HOME")
+    expect(page.get_by_title("HyperText Markup Language")).to_have_text("HTML")
+    page.wait_for_timeout(5000)
+
+#7.page.get_by_test_id()
+    expect(page.get_by_test_id("profile-name")).to_have_text("John Doe")
+    expect(page.get_by_test_id("profile-email")).to_have_text("john.doe@example.com")
+
+
+
+
+
+
+
+
